@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Efficient Portfolios Application</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Efficient Portfolios Application">
+  <meta name="author" content="Felix">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="../libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="../libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="../libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="../libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="../libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="../libraries/frameworks/io2012/js/slides" 
+    src="../libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Efficient Portfolios Application</h1>
+    <h2>Efficient Frontiers with no risk-free asset</h2>
+    <p>Felix<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>App Summary</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>Select a number of stocks to consider</p></li>
+<li><p>Select the stocks </p></li>
+<li><p>Download Financial Data from Yahoo Finance. Monthly values from 1998.</p></li>
+<li><p>Statistical analysis of time series </p></li>
+<li><p>Calculate Efficient Portfolios &amp; Global Minimum Variance Portfolio and Tangency Portfolio </p></li>
+<li><p>Display Output Graphs and Calculate Value at Risk </p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Efficient Portfolio</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>Consider two assets A and B with its Returns R, following independent and identically distributed 
+normal distributions</p>
+
+<p>\[R_i\ \sim\ i.i.d. \mathcal{N}(\mu_i,\,\sigma_i^2)\]</p></li>
+<li><p>Portfolio Return and Portfolio Risk (variance) are stated as follows</p></li>
+</ol>
+
+<p>\[\operatorname{E}(R_p) = w_A \operatorname{E}(R_A) + w_B \operatorname{E}(R_B)\]</p>
+
+<p>\[\sigma_p^2  = w_A^2 \sigma_A^2  + w_B^2 \sigma_B^2 + 2w_Aw_B  \sigma_{A} \sigma_{B} \rho_{AB}\]</p>
+
+<ol>
+<li>Therefore, Markowitz Modern Portfolio Theory states that Efficient Portfolios are the result of the
+minimization problem</li>
+</ol>
+
+<p>\[ \underset{w_A, \; w_B}{\operatorname{arg\,min}} \; \sigma_p^2, \; \text{subject to:} \; w_A + w_B = 1\;\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>App Outputs</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>First panel: Stock Price Monthly Evolution from 1998. (Time series)</li>
+<li>Second panel: Stock Monthly Returns (Continuously Compounded Returns) (Time Series)</li>
+<li><p>Third panel: Expected returns of efficient portfolio (efficient frontier) Vs. Risk of Efficient portfolios. 
+             Return and risk is also displayed for individual values, Global Minimum Variance portfolio and 
+             Tangency portfolio.</p></li>
+<li><p>Fourth panel: Portfolio composition given an expected level of return. Negative values imply short-shelling.</p></li>
+<li><p>Sixth panel:  Table summarizing previous graph and calculating VaR for every Efficient Portfolio.</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Data Interpretation</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>For a given Expected Return (portfolio rate of return), the values associated to each stock represent the amount of the stock in the current portfolio. Negative values represent short-selling (sale of a security not owned by the seller or borrowed) and are counteracted by higher positive numbers. The summation of the position equals to 1.</p>
+
+<p>VaR (Value at Risk) is estimated at a 5% level, meaning that there is a 5% probability that the portfolio will fail in value by the VaR amount calculated.</p>
+
+<p>Check it here at <a href="https://frpportfolio.shinyapps.io/frpportfolio/">ShinyApps</a>              </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='App Summary'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Efficient Portfolio'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='App Outputs'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Data Interpretation'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="../libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="../libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
